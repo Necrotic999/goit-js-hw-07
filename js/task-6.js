@@ -30,14 +30,18 @@ function destroyBoxes() {
 }
 
 function createBoxes(amount) {
-  let wid = 20;
-  let heig = 20;
-  for (let i = 0; i < amount; i++) { 
+  let width = 30;
+  let height = 30;
+  for (let i = 0; i < amount; i++) {
     const divBox = document.createElement("div");
     divBoxes.appendChild(divBox);
-    console.log(divBox);
-    divBox.style.width = `${wid += 10}px`;
-    divBox.style.height = `${heig += 10}px`;
+    if (i === 0) {
+      divBox.style.width = `${width}px`;
+      divBox.style.height = `${height}px`;
+    } else { 
+      divBox.style.width = `${width += 10}px`;
+      divBox.style.height = `${height += 10}px`;
+    }
     divBox.style.backgroundColor = getRandomHexColor();
   }
 }
